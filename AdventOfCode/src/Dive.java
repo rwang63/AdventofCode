@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Dive {
-    static final String filePath = "/Users/ruifengwang/JavaProjects/diveInput";
+    static final String filePath = "./diveInput";
 
     public static void main(String[] args) {
         int result = calculatePosition(filePath);
@@ -26,16 +26,10 @@ public class Dive {
             while(myReader.hasNextLine()) {
                 direction = myReader.next();
                 amount = myReader.nextInt();
-                switch(direction) {
-                    case "forward":
-                        horizontalPosition += amount;
-                        break;
-                    case "up":
-                        depth -= amount;
-                        break;
-                    case "down":
-                        depth += amount;
-                        break;
+                switch (direction) {
+                    case "forward" -> horizontalPosition += amount;
+                    case "up" -> depth -= amount;
+                    case "down" -> depth += amount;
                 }
             }
             finalResult = horizontalPosition * depth;
@@ -59,19 +53,15 @@ public class Dive {
             while(myReader.hasNextLine()) {
                 direction = myReader.next();
                 amount = myReader.nextInt();
-                switch(direction) {
-                    case "forward":
+                switch (direction) {
+                    case "forward" -> {
                         horizontalPosition += amount;
-                        if(aim > 0) {
+                        if (aim > 0) {
                             depth += aim * amount;
                         }
-                        break;
-                    case "up":
-                        aim -= amount;
-                        break;
-                    case "down":
-                        aim += amount;
-                        break;
+                    }
+                    case "up" -> aim -= amount;
+                    case "down" -> aim += amount;
                 }
             }
             finalResult = horizontalPosition * depth;

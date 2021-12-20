@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class SonarSweep {
-    static final String filePath = "/Users/ruifengwang/JavaProjects/input";
+    static final String filePath = "/Users/ruifengwang/JavaProjects/sonarInput";
 
     public static void main(String[] args) {
         countIncrements(filePath);

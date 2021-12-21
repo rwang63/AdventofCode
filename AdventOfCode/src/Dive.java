@@ -27,9 +27,15 @@ public class Dive {
                 direction = myReader.next();
                 amount = myReader.nextInt();
                 switch (direction) {
-                    case "forward" -> horizontalPosition += amount;
-                    case "up" -> depth -= amount;
-                    case "down" -> depth += amount;
+                    case "forward":
+                        horizontalPosition += amount;
+                        break;
+                    case "up":
+                        depth -= amount;
+                        break;
+                    case "down":
+                        depth += amount;
+                        break;
                 }
             }
             finalResult = horizontalPosition * depth;
@@ -54,14 +60,18 @@ public class Dive {
                 direction = myReader.next();
                 amount = myReader.nextInt();
                 switch (direction) {
-                    case "forward" -> {
+                    case "forward":
                         horizontalPosition += amount;
                         if (aim > 0) {
                             depth += aim * amount;
                         }
-                    }
-                    case "up" -> aim -= amount;
-                    case "down" -> aim += amount;
+                        break;
+                    case "up" :
+                        aim -= amount;
+                        break;
+                    case "down":
+                        aim += amount;
+                        break;
                 }
             }
             finalResult = horizontalPosition * depth;
